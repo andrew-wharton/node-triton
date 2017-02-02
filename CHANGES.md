@@ -7,6 +7,34 @@ Known issues:
 
 ## not yet released
 
+- [joyent/node-triton#156] Providing all required profile options as
+  command line flags (account, url, keyId) no longer produces an
+  incomplete profile error.
+
+- PUBAPI-1171/PUBAPI-1205/PUBAPI-1351 The handling of legacy `SDC_*`
+  environment variables has been cleaned up.  These environment
+  variables are used for compatibility with the node-smartdc toolset.
+   * `SDC_TESTING` is now evaluated the same way as node-smartdc.  Any
+     set value but the empty string is true.
+   * Errors on boolean environment variables will now identify the
+     variable at fault.
+   * `triton env` will emit additional comments grouping variables.
+
+- [joyent/node-triton#80] Add `triton network list public=true|false`
+  filtering. Note that this filtering is client-side.
+
+- [joyent/node-triton#146] Add `--wait` flag to `triton instance rename`.
+
+- [joyent/node-triton#133] Add `triton inst fwrule list` and `triton fwrules` shortcuts
+  for the existing `triton inst fwrules` and `triton fwrule list`, respectively.
+
+- [joyent/node-triton#3] triton ssh command not aware of "ubuntu" login for ubuntu-certified images
+
+- [joyent/node-triton#137] Improve the handling for the getting started case
+  when a user may not have envvars or a profile setup.
+
+- [joyent/node-triton#158] tritonapi image cache never expires
+
 - [joyent/node-triton#153] Bump restify-clients dep. Thanks, github.com/tomgco.
 
 - [joyent/node-triton#154] Fix `triton cloudapi ...` after #108 changes.
